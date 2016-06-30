@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+body
+{
+background-color:linen;
+}
+input {
+  display: inline-block;
+ }
+ label
+ {
+ 
+ color:purple;
+ 
+ }
+ label {
+color: #B4886B;
+font-weight: bold;
+display: block;
+width: 250px;
+float: left;
+}
+
+</style>
+<script type="text/javascript">
+ function onSubmit()
+ {
+ var iife=function()
+ {
+if((document.getElementById("a").value).trim() =="" || (document.getElementById("b").value).trim() =="" ||  document.getElementById("c").value =="" || document.getElementById("d").value =="")
+{
+alert ('Please Enter All The Details:-');
+exit();
+}
+var pnumber=((document.getElementById("b").value).trim());
+ var phoneno = /^\d{10}$/;
+if(! phoneno.test(pnumber) )
+{
+alert('enter valid  number');
+exit();
+}
+   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var emailId= document.getElementById("c").value ;  
+    
+if(!re.test(emailId))
+{
+alert('enter valid email id');
+}
+alert('Data is submitted');
+}
+iife();
+}
+</script>
+</head>
+<body>
+<h1 style="text-align:center ;color:grey">ENTER THE INFORMATION </h1>
+<Label> FIRST NAME<br>
+<input type="text" id="a"><br>
+<br>
+
+<label > PHONE NUMBER<br>
+<input style="left:30px" type="text" id="b"><br>
+<br>
+
+<LABEL> EMAIL-ID<br>
+<input type="text" value="" id="c"><br>
+<br>
+
+
+<LABEL> ADRESS<BR>
+<textarea rows="8" cols="100" id="d"></textarea><br>
+<BR><br>
+<input style="align:center"type="button" value="submit" onclick="onSubmit();">
+
+
+</body>
+</html>
